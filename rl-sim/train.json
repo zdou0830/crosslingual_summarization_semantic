@@ -1,0 +1,39 @@
+{
+    "train": [
+        "mt.train.src",
+        "mt.train.tgt",
+        "xls.train.src",
+        "xls.train.tgt"
+    ],
+    "valid": [
+        "mt.valid.src",
+        "mt.valid.tgt",
+        "xls.valid.src",
+        "xls.valid.tgt"
+    ],
+    "vocab": [
+        "vocab.src",
+        "vocab.tgt"
+    ],
+    "layers": 6,
+    "heads": 8,
+    "hidden_size": 512,
+    "ff_size": 2048,
+    "model_path": "model_path",
+    "batch_size": 256,
+    "grad_accum": 16,
+    "report_every": 100,
+    "save_every": 1000,
+    "warm_up": 16000,
+    "tf": true,
+    "share_cn_embedding": true,
+    "max_to_keep": 10,
+    "lr": 0.01,
+    "beta": 0.0,
+    "alpha": 0.002,
+    "label_smoothing": 0.0,
+    "dropout": 0.0,
+    "sim_model_file": "sim_model.pt",
+    "en_vecs": "en_vecs",
+    "train_from": "pretrain_model.pt"
+}
