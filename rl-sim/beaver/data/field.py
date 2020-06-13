@@ -58,16 +58,13 @@ class Field(object):
             if tok == self.bos_token:
                 continue
             ori_tokens.append(tok)
-            #if tok == '。':
-            #    tokens.append('.')
-            #    continue
+            if tok == '。':
+                tokens.append('.')
+                continue
             if tok == '</t>' or tok == '<t>':
                 continue
             tokens.append('word'+str(tok_id.cpu().numpy()))
-        #print(" ".join(tokens))
-        #print(" ".join(ori_tokens))
-        return " ".join(tokens)#,  " ".join(ori_tokens) #.replace("@@ ", "").replace("@@", "")
-        #return " ".join(tokens).replace("@@ ", "").replace("@@", "")
+        return " ".join(tokens)
 
     def decode_ori(self, ids):
         tokens = []
@@ -85,10 +82,7 @@ class Field(object):
                 tokens.append('.')
                 continue
             tokens.append('word'+str(tok_id.cpu().numpy()))
-        #print(" ".join(tokens))
-        #print(" ".join(ori_tokens))
-        return " ".join(tokens), " ".join(ori_tokens) #,  " ".join(ori_tokens) #.replace("@@ ", "").replace("@@", "")
-        #return " ".join(tokens).replace("@@ ", "").replace("@@", "")
+        return " ".join(tokens), " ".join(ori_tokens)
 
 
     def decode(self, ids):
